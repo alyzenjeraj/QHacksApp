@@ -1,11 +1,11 @@
-rsf
 import React from 'react';
+import {Text, View, Image, SafeAreaView} from 'react-native';
 
 function loginScreen(props) {
     return (
-        <div>
+        <SafeAreaView>jkl
             
-        </div>
+        </SafeAreaView>
     );
 }
 
