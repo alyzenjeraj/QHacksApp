@@ -1,10 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, Button, TouchableOpacity} from 'react-native';
+
+
+import { NavigationContainer } from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import IonIcons from 'react-native-vector-icons/Ionicons'
 
 function ProfileScreen(props) {
     return (
+
         <SafeAreaView>
-            <Text>Hello World We are here :)))</Text>
+             <Text
+            style={styles.texted}>Jordan</Text>
+            <Image
+            style={styles.image}
+            source={require('../assets/Pictures/RockGarden.png')}/>
+            <Text style={styles.textNorm}>Skill: Digital Art</Text>
+            <Text style={styles.textNorm}>Timeline: 1 week</Text>
+            <Text style={styles.textNorm}>Projects completed: 3</Text>
         </SafeAreaView>
     );
 }
@@ -16,37 +29,45 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    texted: {        
-        marginTop: 200,
-        fontSize: 80,
+    texted: {
+        marginTop: 50,
+        fontSize: 50,
         fontFamily: "ConcertOne",
         textAlign: "center",
     },
-    loginButton: {
-        width: "50%",
-        height: 50,
-        fontSize: 50,
+    textNorm: {
+        marginTop: 10,
+        marginLeft: 20,
+        fontSize: 25,
         fontFamily: "Nunito",
+        textAlign: "left",
+    },
+    roundButton1: {
+        width: 100,
+        height: 100,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#BC99E9",
+        padding: 10,
+        borderRadius: 100,
+        backgroundColor: 'green',
+        fontFamily: "Nunito",
    },
-   registerButton: {
-    width: "50%",
-    height: 50,
-    fontSize: 50,
-    fontFamily: "Nunito",
+   roundButton2: {
+    marginTop: 20,
+    width: 150,
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "#BC99E9",
-    marginBottom: 20,
-    padding: 30,
-   },
+    padding: 10,
+    borderRadius: 100,
+    backgroundColor: 'red',
+  },
    image: {
-    width: 200,
-    height: 200,
+    top: 5,
+    width: 350,
+    height: 450,
     position: 'relative',
-    bottom: 0,
+    bottom: 5,
     alignSelf: 'center',
     },
     space: {
@@ -56,6 +77,3 @@ const styles = StyleSheet.create({
 })
 
 export default ProfileScreen;
-
-
-
