@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
-import PreLoginScreen from './app/screens/preLoginScreen';
+import preLoginScreen from './app/screens/preLoginScreen';
+import loginScreen from './app/screens/loginScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
  
 
 const getFonts = () =>
@@ -12,17 +16,21 @@ const getFonts = () =>
     Nunito: require("./app/assets/fonts/Nunito-VariableFont_wght.ttf")
   });
 
+  const Stack = createNativeStackNavigator();
   export default function App() {
-    const [fontsloaded, setFontsLoaded] = useState(false);
+    //const [fontsloaded, setFontsLoaded] = useState(false);
   
-    if (fontsloaded) {
+   // if (fontsloaded) {
       return (
-        <PreLoginScreen>
-        <View style={styles.container}>
-          <StatusBar style="auto" />
-        </View>
-          </PreLoginScreen>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="preLogin">
+            <Stack.Screen name="preLogin" component={preLoginScreen} />
+            <Stack.Screen name="login" component={loginScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+        
       );
+      /*
     } else {
       return (
         <AppLoading
@@ -34,6 +42,7 @@ const getFonts = () =>
         />
       );
     }
+    */
   }
   const styles = StyleSheet.create({
     container: {

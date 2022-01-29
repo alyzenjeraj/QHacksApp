@@ -1,16 +1,24 @@
 import React from 'react';
 import { SafeAreaView, Button, StatusBar, ImageBackground, StyleSheet, Text, View, Image } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 function preLoginScreen(props) {
+    const navigation = useNavigation();
     return (
-        <SafeAreaView style={styles.conatiner}>
-            <Text
-            style={styles.texted}>Finch</Text>
-            <Image             
-            style={styles.image}
-            source={require('../assets/Finch_2.png')}/>
-            <Button style={styles.loginButton} title="Login" color="#BC99E9" onPress={() => console.log("Top Tapped")}></Button>
-            <Button style={styles.registerButton} title="Sign Up" onPress={() => console.log("Bottom Tapped")}></Button>
+        <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
+                <StatusBar style="auto" />
+            
+                <Text
+                style={styles.texted}>Finch</Text>
+                <Image             
+                style={styles.image}
+                source={require('../assets/Finch_2.png')}/>
+                <Button style={styles.loginButton} title="Login" color="#BC99E9" onPress={() => navigation.navigate('login')}></Button>
+                <Button style={styles.registerButton} title="Sign Up" onPress={() => console.log("Bottom Tapped")}></Button>
+            </View>
             
             
         </SafeAreaView>

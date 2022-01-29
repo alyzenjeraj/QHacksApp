@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, TextInput, TouchableOpacity, } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 function loginScreen(props) {
+    const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.mainView}>
             <Image style={styles.image} source={require('../assets/Finch_2.png')} />
