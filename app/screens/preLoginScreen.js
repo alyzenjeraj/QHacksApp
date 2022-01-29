@@ -9,8 +9,8 @@ function preLoginScreen(props) {
             <Image             
             style={styles.image}
             source={require('../assets/Finch_2.png')}/>
-            <Button style={styles.loginButton} title="Login" onPress={() => console.log("Top Tapped")}>Login</Button>
-            <Button style={styles.registerButton} title="Sign Up" onPress={() => console.log("Bottom Tapped")}>Register</Button>
+            <Button style={styles.loginButton} title="Login" color="#BC99E9" onPress={() => console.log("Top Tapped")}></Button>
+            <Button style={styles.registerButton} title="Sign Up" onPress={() => console.log("Bottom Tapped")}></Button>
             
             
         </SafeAreaView>

@@ -1,10 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView} from 'react-native';
+import { SafeAreaView, Button, StatusBar, ImageBackground, StyleSheet, Text, View, Image } from 'react-native';
 
-function ProfileScreen(props) {
+function activity(props) {
     return (
-        <SafeAreaView>
-            <Text>Hello World We are here :)))</Text>
+        <SafeAreaView style={styles.conatiner}>
+            <Text
+            style={styles.texted}>Activity</Text>
+            <Button style={styles.loginButton} title="Login" color="#BC99E9" onPress={() => console.log("Top Tapped")}></Button>
+            <Button style={styles.registerButton} title="Sign Up" onPress={() => console.log("Bottom Tapped")}></Button>
+            
+            
         </SafeAreaView>
     );
 }
@@ -17,9 +22,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     texted: {        
-        marginTop: 200,
-        fontSize: 80,
-        fontFamily: "ConcertOne",
+        marginTop: 30,
+        fontSize: 20,
+        fontFamily: "Nunito",
         textAlign: "center",
     },
     loginButton: {
@@ -55,7 +60,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default ProfileScreen;
-
-
-
+export default activity;
