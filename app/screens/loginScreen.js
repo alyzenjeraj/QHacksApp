@@ -1,15 +1,14 @@
 import React from 'react';
-import {Text, View, Image, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView} from 'react-native';
 
 function loginScreen(props) {
     return (
-        <SafeAreaView>jkl
-            
+        <SafeAreaView>
+            <Text> peep </Text>
         </SafeAreaView>
     );
 }
 
-rnss
 const styles = StyleSheet.create({
     
 })
