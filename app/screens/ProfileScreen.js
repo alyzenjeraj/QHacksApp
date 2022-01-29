@@ -2,10 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, Button, TouchableOpacity} from 'react-native';
 
 
-import { NavigationContainer } from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import IonIcons from 'react-native-vector-icons/Ionicons'
-
 function ProfileScreen(props) {
     return (
 
