@@ -5,6 +5,7 @@ import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import preLoginScreen from './app/screens/preLoginScreen';
 import loginScreen from './app/screens/loginScreen';
+import profileScreen from './app/screens/ProfileScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -26,6 +27,7 @@ const getFonts = () =>
           <Stack.Navigator initialRouteName="preLogin">
             <Stack.Screen name="preLogin" component={preLoginScreen} />
             <Stack.Screen name="login" component={loginScreen} />
+            <Stack.Screen name="profile" component={profileScreen} />
           </Stack.Navigator>
         </NavigationContainer>
         

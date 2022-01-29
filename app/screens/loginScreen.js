@@ -23,7 +23,7 @@ function loginScreen(props) {
             <TouchableOpacity>
                 <Text>Forgot Password?</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.logBot}>
+            <TouchableOpacity style={styles.logBot} onPress={() => navigation.navigate('profile')}>
                 <Text>LOGIN</Text>
             </TouchableOpacity>
         </SafeAreaView>
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     },
     mainView: {
         justifyContent: 'center',
+        backgroundColor: '#fff',
         alignItems: 'center',
         flex: 1,
     },
