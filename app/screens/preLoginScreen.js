@@ -6,11 +6,12 @@ function preLoginScreen(props) {
         <SafeAreaView style={styles.conatiner}>
             <Text
             style={styles.texted}>Finch</Text>
-            <Button style={styles.loginButton} title="Login" onPress={() => console.log("Buttom Tapped")}>Login></Button>
-            <Button style={styles.registerButton} title="Login" onPress={() => console.log("Buttom Tapped")}>Register</Button>
             <Image             
             style={styles.image}
             source={require('../assets/Finch_2.png')}/>
+            <Button style={styles.loginButton} title="Login" onPress={() => console.log("Top Tapped")}>Login</Button>
+            <Button style={styles.registerButton} title="Sign Up" onPress={() => console.log("Bottom Tapped")}>Register</Button>
+            
             
         </SafeAreaView>
     );
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
         fontFamily: "ConcertOne",
         textAlign: "center",
     },
-   loginButton: {
+    loginButton: {
         width: "50%",
         height: 50,
         fontSize: 50,
@@ -46,12 +47,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: "#BC99E9",
+    marginBottom: 20,
+    padding: 30,
    },
    image: {
     width: 200,
     height: 200,
     position: 'relative',
     bottom: 0,
+    alignSelf: 'center',
+    },
+    space: {
+        width: 20,
+        height: 20, 
     },
 })
 
