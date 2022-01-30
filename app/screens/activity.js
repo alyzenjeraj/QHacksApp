@@ -13,7 +13,8 @@ function activity(props) {
         <ScrollView>
         <View style={styles.notificationConatiner}>
                     <View style={styles.name}>
-                    <Text style={styles.nameText}>Aly Jeraj </Text>            
+                    <Text style={styles.nameText}>Aly Jeraj </Text>
+                              
                     <Image source={require('../assets/Aly.jpg')} style={styles.avatar1} resizeMode='cover'/> 
                     </View>
                     <View style={styles.name}>
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingTop: 24,
     },
+    
     avatar1: {        
         width: 60,
         height: 60,

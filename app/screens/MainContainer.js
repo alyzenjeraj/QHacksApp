@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, Button, TouchableOpacity} from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, SafeAreaView, Button, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //import { useNavigation } from '@react-navigation/native';

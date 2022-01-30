@@ -14,11 +14,8 @@ function ProfileScreen(props) {
         
         <SafeAreaView>
              <Text
-            style={styles.texted}>Jordan</Text>
-
-            <Text
             onPress = {() => alert('this is the Profile Screen.')}
-            style={styles.texted}>Profile Screen</Text>
+            style={styles.texted}>Lor's Profile</Text>
 
             <Image
             style={styles.image}
@@ -26,6 +23,7 @@ function ProfileScreen(props) {
             <Text style={styles.textNorm}>Skill: Digital Art</Text>
             <Text style={styles.textNorm}>Timeline: 1 week</Text>
             <Text style={styles.textNorm}>Projects completed: 3</Text>
+            <Text style={styles.textNorm}>Socials: @Lor_Mentor</Text>
         </SafeAreaView>
     );
 }
@@ -38,17 +36,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     texted: {
-        marginTop: 50,
-        fontSize: 50,
+        marginTop: 20,
+        fontSize: 30,
         fontFamily: "ConcertOne",
         textAlign: "center",
     },
     textNorm: {
         marginTop: 10,
         marginLeft: 20,
-        fontSize: 25,
+        marginRight: 20,
+        fontSize: 15,
         fontFamily: "Nunito",
-        textAlign: "left",
+        textAlign: "center",
+        backgroundColor: "#BC99E9",
+        padding: 5,
+        borderRadius: 30,
     },
     roundButton1: {
         width: 100,
@@ -71,11 +73,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
    image: {
-    top: 5,
-    width: 350,
-    height: 450,
+    top: 20,
+    width: 300,
+    height: 350,
     position: 'relative',
     bottom: 5,
+    marginBottom: 20,
     alignSelf: 'center',
     },
     space: {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Platform, TextInput, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useNavigation } from '@react-navigation/native';
+import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export default function createProfile(props) {
     const navigation = useNavigation();
@@ -27,9 +28,10 @@ export default function createProfile(props) {
   const [lname, last] = useState('lname');
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Time to make your profile!</Text>
-        <Text> Lets start with your name!</Text>
+    <ScrollView style={styles.views}>
+        <Text style={styles.pad}> </Text>
+        <Text style={styles.text}>Time to make your profile!</Text>
+        <Text style={styles.text}> Lets start with your name!</Text>
         <View style={styles.row}>
             <View style={styles.ipview}>
                 <TextInput placeholder='First Name' placeholderTextColor='white' style={styles.inputter}/>
@@ -39,39 +41,51 @@ export default function createProfile(props) {
             </View>
         </View>
         <TouchableOpacity onPress={pickImage} style={styles.logBot}>
-            <Text>Pick an image to show your talent!</Text>
+            <Text style={styles.text2}>Tap to pick an image to show your talent!</Text>
         </TouchableOpacity>
         {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
 
         
         
-            <Text>Addtional Information!</Text>
-        <View style={styles.row}>
+            <Text style={styles.text}>Addtional Information!</Text>
+        
             <View style={styles.ipview}>
                 <TextInput placeholder='Skills' placeholderTextColor='white' style={styles.inputter}/>
             </View>
             <View style={styles.ipview}>
                 <TextInput placeholder='Expected Timeline' placeholderTextColor='white' style={styles.inputter}/>            
             </View>
-            </View>
+            
             <View style={styles.ipview}>
             <TextInput placeholder='Projects Completed' placeholderTextColor='white' style={styles.inputter}/>            
             </View>
             <Button style={styles.registerButton} title="Finish!" onPress={() => navigation.navigate('Welcome')}></Button>
 
-        </View>
+        </ScrollView>
 
     
   );
 }
 
 const styles = StyleSheet.create({
+    pad: {
+        padding: 50,
+    },
     image: {
         width: 200,
         height: 200,
         position: 'relative',
         bottom: 0,
         alignSelf: 'center',
+    },
+    text: {
+        alignContent: 'center',
+        alignSelf: 'center'
+    },
+    text2: {
+        alignContent: 'center',
+        alignSelf: 'center',
+        color: 'blue'
     },
     space: {
         width: 20,
@@ -81,6 +95,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'center',
         height: 50,
+        alignContent: 'center',
+        color: 'white'
+    },
+    views: {
+        backgroundColor: 'white',
+        // alignItems: 'center', 
+        // justifyContent: 'center',
         alignContent: 'center'
     },
     registerButton: {
@@ -95,19 +116,19 @@ const styles = StyleSheet.create({
         padding: 30,
     },
     row: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignContent: 'center'
     
     },
 
     ipview: {
-        backgroundColor: '#f578e5',
+        backgroundColor: "#BC99E9",
         opacity: 30,
         borderRadius: 30,
         width: "70%",
         height: 45,
-        margin: 15,
+        margin: 20,
         alignSelf: 'center'
     },
     mainView: {
@@ -118,5 +139,8 @@ const styles = StyleSheet.create({
     },
     logBot: {
         padding: 20,
-    }
+    },
+    iptext: {
+        color: "white"
+    },
 })

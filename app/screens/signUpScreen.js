@@ -32,6 +32,7 @@ function signUpScreen(props) {
                 <TextInput placeholder="Confirm Password" 
                 style={styles.inputter}
                 placeholderTextColor="white"
+                
                 secureTextEntry={true}
                 onChangeText={(val) => setPassConf(val)}/>
             </View>
@@ -59,10 +60,11 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'center',
         height: 50,
+        color: 'white',
     },
 
     ipview: {
-        backgroundColor: '#f578e5',
+        backgroundColor: "#BC99E9",
         opacity: 30,
         borderRadius: 30,
         width: "70%",
