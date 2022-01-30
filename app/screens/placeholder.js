@@ -4,21 +4,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
-function preLoginScreen(props) {
+function placeholder(props) {
     const navigation = useNavigation();
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.container}>
-                <StatusBar style="auto" />
+        <SafeAreaView style={styles.conatiner}>
+            <Text
+            style={styles.texted}>Placeholder</Text>
+
+            <Text
+                onPress = {() => navigation.navigate('Profile')}
+                style={styles.texted}>Placeholder Screen</Text>
             
-                <Text
-                style={styles.texted}>Finch</Text>
-                <Image             
-                style={styles.image}
-                source={require('../assets/Finch_2.png')}/>
-                <Button style={styles.loginButton} title="Login" color="#BC99E9" onPress={() => navigation.navigate('login')}></Button>
-                <Button style={styles.registerButton} title="Sign Up" onPress={() => navigation.navigate('Sign Up')}></Button>
-            </View>
             
             
         </SafeAreaView>
@@ -33,9 +29,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     texted: {        
-        marginTop: 200,
-        fontSize: 80,
-        fontFamily: "ConcertOne",
+        marginTop: 30,
+        fontSize: 20,
+        fontFamily: "Nunito",
         textAlign: "center",
     },
     loginButton: {
@@ -71,4 +67,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default preLoginScreen;
+export default placeholder;

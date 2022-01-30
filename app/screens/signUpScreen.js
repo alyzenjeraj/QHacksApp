@@ -1,31 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, TextInput, TouchableOpacity, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
-
-function loginScreen(props) {
+function signUpScreen(props) {
     const navigation = useNavigation();
+    const [email, setEmail] = useState('email@email')
+    const [pass, setPass]  = useState('pass');
+    const [passConf, setPassConf] = useState('passConf')
     return (
         <SafeAreaView style={styles.mainView}>
             <Image style={styles.image} source={require('../assets/Finch_2.png')} />
-
+            <Text>Hi! Welcome to Finch!</Text>
+            <Text>Meet other creatives and share your craft!</Text>
             <View style={styles.ipview}>
                 <TextInput placeholder="Email" 
                 style={styles.inputter}
-                placeholderTextColor="white"/>
+                placeholderTextColor="white"
+                onChangeText={(val) => setEmail(val)}/>
+
             </View>
             <View style={styles.ipview}>
                 <TextInput placeholder="Password" 
                 style={styles.inputter}
-                placeholderTextColor="white" secureTextEntry={true}/>
+                placeholderTextColor="white"  
+                secureTextEntry={true}
+                onChangeText={(val) => setPass(val)}/>
             </View>
-            <TouchableOpacity style={styles.logBot} onPress={() => navigation.goBack()}>
-                <Text>Go back?</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.logBot} onPress={() => navigation.navigate('Welcome')}>
-                <Text>LOGIN</Text>
+            <View style={styles.ipview}>
+                <TextInput placeholder="Confirm Password" 
+                style={styles.inputter}
+                placeholderTextColor="white"
+                secureTextEntry={true}
+                onChangeText={(val) => setPassConf(val)}/>
+            </View>
+           
+            <TouchableOpacity style={styles.logBot} onPress={() => pass == passConf ? navigation.navigate('Edit Profile') : alert('Passwords do not match. Re-Enter.')}>
+                <Text>Sign Up!</Text>
             </TouchableOpacity>
         </SafeAreaView>
     );
@@ -69,7 +81,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default loginScreen;
-
-
-
+export default signUpScreen;

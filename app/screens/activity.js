@@ -1,63 +1,79 @@
+
 import React from 'react';
-import { SafeAreaView, Button, StatusBar, ImageBackground, StyleSheet, Text, View, Image } from 'react-native';
+import { SafeAreaView, ScrollView, Button, StatusBar, ImageBackground, StyleSheet, Text, View, Image } from 'react-native';
+import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+//import notificationPage from '../data/notificationPage';
 
 function activity(props) {
     return (
-        <SafeAreaView style={styles.conatiner}>
-            <Text
-            style={styles.texted}>Activity</Text>
-            <Button style={styles.loginButton} title="Login" color="#BC99E9" onPress={() => console.log("Top Tapped")}></Button>
-            <Button style={styles.registerButton} title="Sign Up" onPress={() => console.log("Bottom Tapped")}></Button>
-            
-            
-        </SafeAreaView>
+        <>
+        <View>            
+            <Text style={styles.note}>Notifications</Text>
+        </View>
+        <ScrollView>
+        <View style={styles.notificationConatiner}>
+                    <View style={styles.name}>
+                    <Text style={styles.nameText}>Aly Jeraj </Text>            
+                    <Image source={require('../assets/Aly.jpg')} style={styles.avatar1} resizeMode='cover'/> 
+                    </View>
+                    <View style={styles.name}>
+                    <Text style={styles.nameText}>Caleb Wong</Text>            
+                    <Image source={require('../assets/Caleb.jpg')} style={styles.avatar1} resizeMode='cover'/> 
+                    </View>
+                    <View style={styles.name}>
+                    <Text style={styles.nameText}>Jordan Goldbloom </Text>            
+                    <Image source={require('../assets/Jordan.jpg')} style={styles.avatar1} resizeMode='cover'/> 
+                    </View>
+                    <View style={styles.name}>
+                    <Text style={styles.nameText}>Mailyn Tak </Text>            
+                    <Image source={require('../assets/Mailyn.jpg')} style={styles.avatar1} resizeMode='cover'/> 
+                    </View>
+            </View>
+        </ScrollView>
+        </>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center',
+    
+    note: {
+        marginTop: 60,
+        fontSize: 30,
+        
+        fontFamily: 'Nunito',
+        textAlign: 'center',
     },
-    texted: {        
-        marginTop: 30,
-        fontSize: 20,
-        fontFamily: "Nunito",
-        textAlign: "center",
+    notificationsContainer: {
     },
-    loginButton: {
-        width: "50%",
-        height: 50,
-        fontSize: 50,
-        fontFamily: "Nunito",
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: "#BC99E9",
-   },
-   registerButton: {
-    width: "50%",
-    height: 50,
-    fontSize: 50,
-    fontFamily: "Nunito",
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: "#BC99E9",
-    marginBottom: 20,
-    padding: 30,
-   },
-   image: {
-    width: 200,
-    height: 200,
-    position: 'relative',
-    bottom: 0,
-    alignSelf: 'center',
+    name: {
+        backgroundColor: '#BC99E9',
+        marginTop: 20,
+        marginLeft: 20,
+        marginRight: 20,
+        height: 80,
+        borderRadius: 8,
+        display: 'flex',
+        flexDirection: 'row',   
+        justifyContent: 'space-between',
+
     },
-    space: {
-        width: 20,
-        height: 20, 
+    nameText: {
+        fontSize: 24,
+        fontFamily: 'Nunito',
+        paddingLeft: 20,
+        paddingTop: 24,
     },
+    avatar1: {        
+        width: 60,
+        height: 60,
+        borderRadius: 50,
+        margin: 10,
+        marginRight: 20,
+    },
+
 })
+
+
+
 
 export default activity;
